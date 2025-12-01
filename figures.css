@@ -1,0 +1,390 @@
+/* FIGURES.CSS - Styling for Manual Diagrams */
+
+/* Diagram Container Styles */
+.diagram-placeholder {
+    margin: 30px 0;
+    padding: 20px;
+    background: #1a1a1a;
+    border: 3px solid #8B2332;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.diagram-placeholder p {
+    color: #C41E3A;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.diagram-content {
+    margin-top: 20px;
+}
+
+/* Card Pile Styling for Figure 1 */
+.card-piles {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.pile {
+    position: relative;
+    width: 140px;
+    height: 200px;
+}
+
+.card {
+    position: absolute;
+    width: 140px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Back Styling */
+.card-back {
+    background: #8B2332;
+    border: 3px solid #2a2a2a;
+    bottom: 0;
+    left: 0;
+}
+
+.card-back::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 80px;
+    height: 80px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.card-back::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+/* Card Face Styling */
+.card-face {
+    background: white;
+    border: 2px solid #333;
+    bottom: 15px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.card-face.spade {
+    color: black;
+}
+
+.card-face.heart {
+    color: #C41E3A;
+}
+
+.card-face.diamond {
+    color: #C41E3A;
+}
+
+.card-face.club {
+    color: black;
+}
+
+.card-top {
+    text-align: left;
+    line-height: 1;
+}
+
+.card-center {
+    font-size: 64px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Label Styling */
+.diagram-label {
+    color: #e0e0e0;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(196, 30, 58, 0.15);
+    border: 2px solid #8B2332;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* ========================================
+   FIGURE 2: OVERHEAD TABLE SETUP STYLES
+   ======================================== */
+
+.table-setup {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.game-table {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #2a2a2a;
+    border: 4px solid #8B2332;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Center Items */
+.center-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.draw-pile {
+    position: relative;
+    width: 60px;
+    height: 80px;
+}
+
+.mini-card {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: #8B2332;
+    border: 2px solid #1a1a1a;
+    border-radius: 5px;
+}
+
+.mini-card:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.mini-card:nth-child(2) {
+    top: -3px;
+    left: -3px;
+}
+
+.mini-card:nth-child(3) {
+    top: -6px;
+    left: -6px;
+}
+
+.draw-pile .label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: #C41E3A;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.discard-pile {
+    width: 60px;
+    height: 80px;
+    border: 2px dashed #666;
+    border-radius: 5px;
+    position: relative;
+}
+
+.discard-pile .label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: #C41E3A;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.hourglass-icon {
+    font-size: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Clockwise Arrow */
+.clockwise-arrow {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 48px;
+    color: #C41E3A;
+    font-weight: bold;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}
+
+/* Player Positions */
+.player {
+    position: absolute;
+}
+
+.player-label {
+    font-size: 14px;
+    color: #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.dealer-label {
+    font-size: 11px;
+    color: #C41E3A;
+    font-style: italic;
+}
+
+.player-cards {
+    display: flex;
+    gap: 6px;
+}
+
+.tiny-pile {
+    width: 20px;
+    height: 28px;
+    background: #8B2332;
+    border: 1px solid #1a1a1a;
+    border-radius: 3px;
+    position: relative;
+}
+
+.tiny-pile::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 26px;
+    background: white;
+    border: 1px solid #333;
+    border-radius: 2px;
+    bottom: 2px;
+    left: 1px;
+}
+
+/* Position Each Player */
+.player-top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.player-right {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.player-right .player-cards {
+    flex-direction: column;
+}
+
+.player-bottom {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.player-left {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.player-left .player-cards {
+    flex-direction: column;
+}
+
+/* Responsive Design for Diagrams */
+@media (max-width: 768px) {
+    .card-piles {
+        gap: 20px;
+    }
+    
+    .pile {
+        width: 100px;
+        height: 140px;
+    }
+    
+    .card {
+        width: 100px;
+        height: 140px;
+    }
+    
+    .card-face {
+        font-size: 32px;
+        padding: 10px;
+    }
+    
+    .card-center {
+        font-size: 42px;
+    }
+    
+    /* Figure 2 responsive */
+    .game-table {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .center-items {
+        gap: 10px;
+    }
+    
+    .mini-card,
+    .draw-pile,
+    .discard-pile {
+        width: 40px;
+        height: 55px;
+    }
+    
+    .hourglass-icon {
+        font-size: 24px;
+    }
+    
+    .tiny-pile {
+        width: 15px;
+        height: 20px;
+    }
+    
+    .tiny-pile::after {
+        width: 13px;
+        height: 18px;
+    }
+    
+    .player-label {
+        font-size: 11px;
+    }
+    
+    .clockwise-arrow {
+        font-size: 32px;
+    }
+}

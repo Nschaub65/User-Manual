@@ -1,0 +1,694 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: #1a1a1a;
+    background-attachment: fixed;
+    color: #e0e0e0;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 30px;
+    background: #2a2a2a;
+    border: 3px solid #8B2332;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.cover-page {
+    padding: 40px 30px;
+}
+
+.cover-info {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.cover-info p {
+    margin: 8px 0;
+    color: #e0e0e0;
+}
+
+.logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.logo-coded {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+}
+
+.logo-svg text {
+    user-select: none;
+}
+
+/* ========================================
+   PRINT/PDF STYLES
+   ======================================== */
+
+@media print {
+    /* Remove default browser margins and add custom ones */
+    @page {
+        margin: 0.5in;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Hide browser-generated headers and footers */
+    header, footer {
+        display: block !important;
+    }
+    
+    /* Ensure sections print well */
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    /* Start major sections on new pages */
+    .cover-page {
+        page-break-after: always;
+    }
+    
+    .toc {
+        page-break-after: always;
+    }
+    
+    /* Keep related content together */
+    .diagram-placeholder,
+    .example-box,
+    .step,
+    .mechanic-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* Table of Contents */
+.toc {
+    background: #252525;
+}
+
+.toc-list {
+    padding: 0;
+}
+
+.toc-list p {
+    padding: 8px 0;
+    color: #c0c0c0;
+    font-size: 1.1em;
+}
+
+.toc-indent {
+    padding-left: 30px !important;
+    font-size: 1em !important;
+}
+
+/* Page Numbers */
+.page-number {
+    text-align: right;
+    color: #666;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Example Boxes */
+.example-box {
+    background: rgba(196, 30, 58, 0.1);
+    border-left: 4px solid #C41E3A;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.example-box h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.example-text {
+    font-style: italic;
+    color: #a0a0a0;
+    line-height: 1.8;
+}
+
+/* Card Breakdown */
+.card-breakdown {
+    background: rgba(196, 30, 58, 0.1);
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 4em;
+    color: #1a1a1a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1.4em;
+    color: #8B2332;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* Warning Box */
+.warning-box {
+    background: rgba(139, 35, 50, 0.3);
+    border: 3px solid #8B2332;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(139, 35, 50, 0.3);
+}
+
+.warning-box h3 {
+    color: #C41E3A;
+    margin-bottom: 12px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.warning-box p {
+    color: #e0e0e0;
+    font-size: 1.1em;
+}
+
+/* Section Styles */
+.section {
+    background: #252525;
+    border: 2px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    color: #C41E3A;
+    font-size: 2.3em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #8B2332;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3 {
+    color: #e0e0e0;
+    font-size: 1.6em;
+    margin: 25px 0 15px 0;
+}
+
+h4 {
+    color: #C41E3A;
+    font-size: 1.3em;
+    margin: 15px 0 10px 0;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #c0c0c0;
+}
+
+/* Components Grid */
+.components-intro {
+    font-size: 1.15em;
+    color: #C41E3A;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.component-card {
+    background: #1a1a1a;
+    border: 3px solid #8B2332;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.component-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(196, 30, 58, 0.4);
+    border-color: #C41E3A;
+}
+
+.component-icon {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.component-card h3 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    color: #C41E3A;
+}
+
+.component-card p {
+    color: #a0a0a0;
+    font-size: 1em;
+}
+
+/* Game Info */
+.game-info {
+    display: grid;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.info-item {
+    background: rgba(196, 30, 58, 0.15);
+    border-left: 4px solid #C41E3A;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.info-label {
+    color: #C41E3A;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+.info-value {
+    color: #e0e0e0;
+    font-size: 1.1em;
+}
+
+/* Objective Box */
+.objective-box {
+    background: rgba(196, 30, 58, 0.15);
+    border: 3px solid #8B2332;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 0;
+    font-size: 1.15em;
+    line-height: 1.8;
+}
+
+.objective-box strong {
+    color: #C41E3A;
+    font-size: 1.2em;
+}
+
+/* Setup Steps */
+.setup-steps {
+    display: grid;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.step {
+    display: flex;
+    gap: 20px;
+    background: #1a1a1a;
+    border: 2px solid #3a3a3a;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    border-color: #C41E3A;
+    background: #222;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8B2332, #C41E3A);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(196, 30, 58, 0.4);
+}
+
+.step-content h3 {
+    margin-top: 0;
+    color: #C41E3A;
+}
+
+.step-content p {
+    margin-bottom: 0;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 12px 0;
+    padding-left: 35px;
+    position: relative;
+    color: #c0c0c0;
+}
+
+li:before {
+    content: "♦";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: #C41E3A;
+    font-size: 1.4em;
+}
+
+ol {
+    padding-left: 20px;
+    color: #c0c0c0;
+}
+
+ol li {
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+ol li:before {
+    content: none;
+}
+
+ol ol {
+    margin-top: 10px;
+}
+
+ol ol li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.rules-list > li, .gameplay-list > li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.gameplay-list h4 {
+    color: #C41E3A;
+    margin: 20px 0 10px 0;
+}
+
+/* Rule Boxes */
+.rule-box {
+    background: rgba(196, 30, 58, 0.1);
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.penalty-box {
+    background: rgba(196, 30, 58, 0.2);
+    border: 2px solid #8B2332;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.penalty-box p, .penalty-box ol {
+    color: #e0e0e0;
+}
+
+.special-rule {
+    background: rgba(196, 30, 58, 0.1);
+    border-left: 5px solid #C41E3A;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.special-rule h4 {
+    margin-top: 0;
+}
+
+.example {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #8B2332;
+    padding: 12px 15px;
+    margin-top: 12px;
+    font-style: italic;
+    color: #a0a0a0;
+}
+
+/* Win Conditions */
+.win-condition {
+    background: rgba(196, 30, 58, 0.15);
+    border: 3px solid #8B2332;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px 0;
+}
+
+.win-condition h3 {
+    margin-top: 0;
+    color: #C41E3A;
+    font-size: 1.8em;
+}
+
+.win-condition h4 {
+    margin-top: 0;
+    color: #C41E3A;
+    font-size: 1.5em;
+}
+
+.win-condition p {
+    margin-bottom: 0;
+}
+
+.consequence {
+    background: rgba(196, 30, 58, 0.3);
+    border: 2px solid #C41E3A;
+    border-radius: 5px;
+    padding: 12px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+/* Mechanics Grid */
+.mechanics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.mechanic-card {
+    background: #1a1a1a;
+    border: 2px solid #8B2332;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.mechanic-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(196, 30, 58, 0.4);
+}
+
+.mechanic-card h3 {
+    color: #C41E3A;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.mechanic-card p {
+    color: #a0a0a0;
+}
+
+/* Reference Table */
+.reference-table {
+    background: #1a1a1a;
+    border: 2px solid #3a3a3a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.reference-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid #3a3a3a;
+    transition: background 0.2s ease;
+}
+
+.reference-row:last-child {
+    border-bottom: none;
+}
+
+.reference-row:hover {
+    background: rgba(196, 30, 58, 0.1);
+}
+
+.reference-label {
+    background: rgba(196, 30, 58, 0.2);
+    padding: 15px 20px;
+    color: #C41E3A;
+    font-weight: bold;
+    border-right: 2px solid #3a3a3a;
+}
+
+.reference-value {
+    padding: 15px 20px;
+    color: #c0c0c0;
+}
+
+/* Tips Section */
+.tips-section ul li {
+    background: rgba(196, 30, 58, 0.1);
+    border-left: 4px solid #C41E3A;
+    margin-bottom: 12px;
+    padding: 15px 15px 15px 35px;
+    border-radius: 5px;
+}
+
+/* Divider */
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #C41E3A, transparent);
+    margin: 30px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    background: #252525;
+    border: 2px solid #3a3a3a;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.emphasis {
+    font-size: 1.3em;
+    color: #C41E3A;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.small-print {
+    color: #a0a0a0;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8em;
+        letter-spacing: 3px;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    .logo-coded {
+        max-width: 300px;
+    }
+    
+    .components {
+        grid-template-columns: 1fr;
+    }
+    
+    .mechanics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .reference-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .reference-label {
+        border-right: none;
+        border-bottom: 1px solid #B8860B;
+    }
+    
+    header {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .logo-coded {
+        max-width: 250px;
+    }
+}
