@@ -785,6 +785,177 @@ footer {
     font-style: italic;
 }
 
+
+/* ========================================
+   NEW FEATURES STYLING
+   ======================================== */
+
+/* Custom Cursor */
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">🃏</text></svg>'), auto;
+}
+
+a, button, .component-card, .mechanic-card {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">♠</text></svg>'), pointer;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(42, 42, 42, 0.5);
+    z-index: 9999;
+}
+
+.progress-bar {
+    height: 4px;
+    background: linear-gradient(to right, #8B2332, #C41E3A);
+    width: 0%;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 10px rgba(196, 30, 58, 0.8);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8B2332, #C41E3A);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(196, 30, 58, 0.6);
+}
+
+/* Section Badges */
+.section-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8B2332, #C41E3A);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+    z-index: 10;
+}
+
+.section {
+    position: relative;
+}
+
+/* Glowing Pulse Effect for Important Rules */
+.rules-list li:nth-child(5), /* Playing a 10 */
+.rules-list li:nth-child(6) { /* Four of a kind */
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        background: rgba(196, 30, 58, 0.1);
+        box-shadow: 0 0 0 rgba(196, 30, 58, 0);
+    }
+    50% {
+        background: rgba(196, 30, 58, 0.2);
+        box-shadow: 0 0 20px rgba(196, 30, 58, 0.4);
+    }
+}
+
+/* Suit Decorations */
+.divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.suit-decoration {
+    font-size: 24px;
+    color: #C41E3A;
+    animation: suitFloat 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+.suit-decoration:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.suit-decoration:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.suit-decoration:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.suit-decoration:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes suitFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* FAQ Items */
+.faq-item {
+    background: rgba(196, 30, 58, 0.1);
+    border-left: 4px solid #C41E3A;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    background: rgba(196, 30, 58, 0.15);
+    transform: translateX(5px);
+}
+
+.faq-question {
+    color: #C41E3A;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.faq-answer {
+    color: #c0c0c0;
+    margin: 0;
+    line-height: 1.6;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -829,6 +1000,28 @@ footer {
     
     .card-values {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+    
+    /* Mobile adjustments for new features */
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .section-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .suit-decoration {
+        font-size: 18px;
+        gap: 10px;
     }
 }
 

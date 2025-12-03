@@ -9,6 +9,16 @@
 </head>
 <body>
     <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+            ↑
+        </button>
+
         <!-- Cover Page -->
         <header class="cover-page">
             <div class="logo-coded">
@@ -66,24 +76,26 @@
                 <p class="toc-indent"><a href="#playing">Playing the Game</a> ...................... Page 5</p>
                 <p class="toc-indent"><a href="#examples">Examples of Play</a> ...................... Page 6</p>
                 <p><a href="#winning">Winning, Losing, and End-of-Game Conditions</a> ...................... Page 7</p>
-                <p><a href="#reference">Quick Reference</a> ...................... Page 8</p>
+                <p><a href="#troubleshooting">Troubleshooting & Common Questions</a> ...................... Page 8</p>
+                <p><a href="#reference">Quick Reference</a> ...................... Page 9</p>
             </div>
         </nav>
 
         <!-- Introduction and Mechanics -->
         <div id="introduction" class="section">
+            <div class="section-badge">1</div>
             <h2>Introduction and Mechanics</h2>
             <div class="page-number">Page 1</div>
             
             <div class="objective-box">
-                <p>Welcome to <strong>Vendetti</strong> — a competitive, fast-paced card game where strategy meets speed and lots of hydration. Race against the hourglass while juggling your cards and your drink. Will you master the chaos or succumb to the pile?</p>
+                <p>Welcome to <strong>Vendetti</strong> a competitive, fast-paced card game where strategy meets speed and lots of hydration. Race against the hourglass while juggling your cards and your drink. Will you master the chaos or succumb to the pile?</p>
             </div>
             
             <h3>Core Concept</h3>
             <p>Vendetti combines the classic card-shedding gameplay of Swoops with the pressure of a ticking timer and drinking penalties. Players race to empty both their table hand and held hand before time runs out.</p>
 
             <h3>What You're Trying to Accomplish</h3>
-            <p>Be the first player to play all your cards from both of your hands before the hourglass runs out. If you can't play a card, you'll drink and pick up the discard pile — setting you back in your quest for victory.</p>
+            <p>Be the first player to play all your cards from both of your hands before the hourglass runs out. If you can't play a card, you'll drink and pick up the discard pile setting you back in your quest for victory.</p>
 
             <h3>Core Mechanics</h3>
             <div class="mechanics-grid">
@@ -104,6 +116,7 @@
 
         <!-- Components and Materials -->
         <div id="components" class="section">
+            <div class="section-badge">2</div>
             <h2>Components and Materials</h2>
             <div class="page-number">Page 2</div>
             
@@ -119,7 +132,7 @@
                     <div class="component-icon">🍺</div>
                     <h3>Beverages</h3>
                     <p><strong>Quantity:</strong> 1 million per player</p>
-                    <p>bring your own beer</p>
+                    <p>bring your own drinks</p>
                 </div>
                 <div class="component-card">
                     <div class="component-icon">⏳</div>
@@ -215,6 +228,7 @@
 
         <!-- Setup Instructions -->
         <div id="setup" class="section">
+            <div class="section-badge">3</div>
             <h2>Setup Instructions</h2>
             <div class="page-number">Page 3</div>
             
@@ -303,6 +317,7 @@
 
         <!-- Gameplay Mechanics -->
         <div id="gameplay" class="section">
+            <div class="section-badge">4</div>
             <h2>Gameplay Mechanics</h2>
             <div class="page-number">Page 4</div>
             
@@ -329,7 +344,12 @@
                 <li>Aces are low</li>
             </ol>
 
-            <div class="divider"></div>
+            <div class="divider">
+                <span class="suit-decoration">♠</span>
+                <span class="suit-decoration">♥</span>
+                <span class="suit-decoration">♦</span>
+                <span class="suit-decoration">♣</span>
+            </div>
 
             <h3 id="playing">Playing the Game</h3>
             <div class="page-number">Page 5</div>
@@ -344,7 +364,12 @@
                 <li>Continue clockwise until a player has no cards in either of their hands or the timer runs out</li>
             </ol>
 
-            <div class="divider"></div>
+            <div class="divider">
+                <span class="suit-decoration">♠</span>
+                <span class="suit-decoration">♥</span>
+                <span class="suit-decoration">♦</span>
+                <span class="suit-decoration">♣</span>
+            </div>
 
             <h3 id="examples">Examples of Play</h3>
             <div class="page-number">Page 6</div>
@@ -377,6 +402,7 @@
 
         <!-- Winning, Losing, and End-of-Game Conditions -->
         <div id="winning" class="section">
+            <div class="section-badge">5</div>
             <h2>Winning, Losing, and End-of-Game Conditions</h2>
             <div class="page-number">Page 7</div>
             
@@ -387,10 +413,38 @@
             </ul>
         </div>
 
+        <!-- Troubleshooting / Common Questions -->
+        <div id="troubleshooting" class="section">
+            <div class="section-badge">6</div>
+            <h2>Troubleshooting & Common Questions</h2>
+            <div class="page-number">Page 8</div>
+
+            <div class="faq-item">
+                <h4 class="faq-question">Q: What if two people play a card at the exact same time?</h4>
+                <p class="faq-answer">The player whose card physically touched the discard pile first plays their card. The other player must take their card back. If it's genuinely impossible to tell, do rock-paper-scissors to decide who played first.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4 class="faq-question">Q: Can I look at my face-down table cards before the draw pile is empty?</h4>
+                <p class="faq-answer">Absolutely not! That's cheating. Face-down cards must remain a mystery until you're forced to play them after the draw pile runs out.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4 class="faq-question">Q: What if the draw pile runs out mid-game?</h4>
+                <p class="faq-answer">This is normal! Once it's empty, stop drawing cards to refill table slots. Leave the face-down cards uncovered (but still face-down). You can now play those face-down cards blind - flip them as you play them.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4 class="faq-question">Q: Can I play multiples from both my held hand AND table hand?</h4>
+                <p class="faq-answer">Yes! If you have three 5s (two in hand, one face-up on table) and all are playable, you can play all three at once.</p>
+            </div>
+        </div>
+
         <!-- Quick Reference Section -->
         <div id="reference" class="section">
+            <div class="section-badge">7</div>
             <h2>Quick Reference</h2>
-            <div class="page-number">Page 8</div>
+            <div class="page-number">Page 9</div>
             
             <h3>Special Cards & Actions</h3>
             <div class="reference-table">
@@ -432,10 +486,38 @@
         <footer>
             <div class="footer-content">
                 <p class="emphasis">Now shuffle up and deal!</p>
-                <p class="small-print">Remember to consume your weight in alcohol and always drink and drive.</p>
+                <p class="small-print">Remember to drink your weight in alcohol and always drink and drive.</p>
                 <p class="copyright">© 2024 Vendetti. All rights reserved.</p>
             </div>
         </footer>
     </div>
+
+    <script>
+        // ===== BACK TO TOP BUTTON =====
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== PROGRESS BAR =====
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
 </body>
 </html>
