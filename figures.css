@@ -42,6 +42,14 @@
     height: 200px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* NEW: Hover effect for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* NEW: Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(196, 30, 58, 0.4);
 }
 
 /* Card Back Styling */
@@ -225,9 +233,24 @@
     font-weight: bold;
 }
 
+/* NEW: Animated Hourglass Timer */
 .hourglass-icon {
     font-size: 32px;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    animation: flip 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes flip {
+    0%, 90% { 
+        transform: rotate(0deg); 
+    }
+    95% { 
+        transform: rotate(90deg); 
+    }
+    100% { 
+        transform: rotate(180deg); 
+    }
 }
 
 /* Clockwise Arrow */

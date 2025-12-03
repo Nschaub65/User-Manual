@@ -12,7 +12,7 @@
         <!-- Cover Page -->
         <header class="cover-page">
             <div class="logo-coded">
-                <svg viewBox="0 0 400 400" class="logo-svg">
+                <svg viewBox="0 0 400 400" class="logo-svg" role="img" aria-label="Vendetti game logo with playing cards">
                     <!-- Outer circle -->
                     <circle cx="200" cy="200" r="190" fill="#2a2a2a" stroke="#8B2332" stroke-width="8"/>
                     
@@ -33,7 +33,7 @@
                     
                     <!-- Playing cards - top right -->
                     <rect x="255" y="60" width="50" height="70" rx="5" fill="white" stroke="#1a1a1a" stroke-width="2"/>
-                    <text x="280" y="110" font-size="40" fill="#1a1a1a" text-anchor="middle">♠</text>
+                    <text x="280" y="110" font-size="40" fill="#1a1a1a" text-anchor="middle">♣</text>
                     
                     <!-- Red swoosh/ellipse behind text -->
                     <ellipse cx="200" cy="200" rx="140" ry="35" fill="#C41E3A" opacity="0.8"/>
@@ -55,17 +55,18 @@
         </header>
 
         <!-- Table of Contents -->
-        <nav class="section toc">
-            <h2>Table of Contents</h2>
+        <nav class="section toc" aria-label="Table of Contents">
+            <h2 id="toc-heading">Table of Contents</h2>
             <div class="toc-list">
-                <p>Introduction and Mechanics ...................... Page 1</p>
-                <p>Components and Materials ...................... Page 2</p>
-                <p>Setup Instructions ...................... Page 3</p>
-                <p>Gameplay Mechanics ...................... Page 4</p>
-                <p class="toc-indent">Rules ...................... Page 4</p>
-                <p class="toc-indent">Playing the Game ...................... Page 5</p>
-                <p class="toc-indent">Examples of Play ...................... Page 6</p>
-                <p>Winning, Losing, and End-of-Game Conditions ...................... Page 7</p>
+                <p><a href="#introduction">Introduction and Mechanics</a> ...................... Page 1</p>
+                <p><a href="#components">Components and Materials</a> ...................... Page 2</p>
+                <p><a href="#setup">Setup Instructions</a> ...................... Page 3</p>
+                <p><a href="#gameplay">Gameplay Mechanics</a> ...................... Page 4</p>
+                <p class="toc-indent"><a href="#rules">Rules</a> ...................... Page 4</p>
+                <p class="toc-indent"><a href="#playing">Playing the Game</a> ...................... Page 5</p>
+                <p class="toc-indent"><a href="#examples">Examples of Play</a> ...................... Page 6</p>
+                <p><a href="#winning">Winning, Losing, and End-of-Game Conditions</a> ...................... Page 7</p>
+                <p><a href="#reference">Quick Reference</a> ...................... Page 8</p>
             </div>
         </nav>
 
@@ -117,8 +118,8 @@
                 <div class="component-card">
                     <div class="component-icon">🍺</div>
                     <h3>Beverages</h3>
-                    <p><strong>Quantity:</strong> 1 per player</p>
-                    <p>(alcoholic drinks, not included)</p>
+                    <p><strong>Quantity:</strong> 1 million per player</p>
+                    <p>bring your own beer</p>
                 </div>
                 <div class="component-card">
                     <div class="component-icon">⏳</div>
@@ -132,10 +133,83 @@
             <div class="card-breakdown">
                 <p>The standard deck contains:</p>
                 <ul>
-                    <li>4 suits: Hearts ♥, Diamonds ♦, Clubs ♣, Spades ♠</li>
-                    <li>13 ranks per suit: Ace (low), 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King</li>
-                    <li>Total: 52 cards</li>
+                    <li><strong>4 suits:</strong> Hearts (♥), Diamonds (♦), Spades (♠), Clubs (♣)</li>
+                    <li><strong>13 ranks per suit:</strong> Ace, 2-10, Jack, Queen, King</li>
+                    <li><strong>Total cards:</strong> 52 cards</li>
                 </ul>
+            </div>
+
+            <!-- NEW: Visual Card Value Reference Chart -->
+            <h3>Card Values at a Glance</h3>
+            <div class="reference-visual">
+                <div class="card-values">
+                    <div class="value-card">
+                        <div class="value-number">A</div>
+                        <div class="value-label">Value: 1</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-number">2-9</div>
+                        <div class="value-label">Face Value</div>
+                    </div>
+                    <div class="value-card special">
+                        <div class="value-number">10</div>
+                        <div class="value-label">⚡ Clear Pile</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-number">J</div>
+                        <div class="value-label">Value: 11</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-number">Q</div>
+                        <div class="value-label">Value: 12</div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-number">K</div>
+                        <div class="value-label">Value: 13</div>
+                    </div>
+                </div>
+                <p class="reference-note">💡 <strong>Special Rule:</strong> Four of a kind also clears the pile!</p>
+            </div>
+
+            <!-- Figure 1: Card Piles -->
+            <div class="diagram-placeholder">
+                <p>Figure 1: Player's Table Hand Example (4 Piles of 2 Cards)</p>
+                <div class="diagram-content">
+                    <div class="card-piles">
+                        <div class="pile">
+                            <div class="card card-back"></div>
+                            <div class="card card-face spade">
+                                <div class="card-top">A</div>
+                                <div class="card-center">♠</div>
+                            </div>
+                            <div class="diagram-label">Pile 1<br>(Face Up on Face Down)</div>
+                        </div>
+                        <div class="pile">
+                            <div class="card card-back"></div>
+                            <div class="card card-face heart">
+                                <div class="card-top">7</div>
+                                <div class="card-center">♥</div>
+                            </div>
+                            <div class="diagram-label">Pile 2<br>(Face Up on Face Down)</div>
+                        </div>
+                        <div class="pile">
+                            <div class="card card-back"></div>
+                            <div class="card card-face diamond">
+                                <div class="card-top">K</div>
+                                <div class="card-center">♦</div>
+                            </div>
+                            <div class="diagram-label">Pile 3<br>(Face Up on Face Down)</div>
+                        </div>
+                        <div class="pile">
+                            <div class="card card-back"></div>
+                            <div class="card card-face club">
+                                <div class="card-top">3</div>
+                                <div class="card-center">♣</div>
+                            </div>
+                            <div class="diagram-label">Pile 4<br>(Face Up on Face Down)</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -144,95 +218,20 @@
             <h2>Setup Instructions</h2>
             <div class="page-number">Page 3</div>
             
-            <p>Follow these steps to set up your game of Vendetti:</p>
+            <p>Provide step-by-step, numbered instructions for how to set up the game. This is a major procedural section.</p>
             
-            <div class="setup-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <p><strong>Shuffle the deck thoroughly.</strong> Place it in the center of the play area where all players can reach it.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <p><strong>Deal four cards face down to each player.</strong> Players must NOT look at these cards. Each player should arrange them in a horizontal row in front of themselves.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <p><strong>Deal four more cards face up to each player.</strong> Players should place each face-up card directly on top of one face-down card, creating four piles of two cards each. (See Figure 1)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="diagram-placeholder" id="figure1">
-                <p><strong>Figure 1: Table Hand Setup</strong></p>
-                <div class="diagram-content">
-                    <div class="card-piles">
-                        <div class="pile">
-                            <div class="card card-back"></div>
-                            <div class="card card-face spade">
-                                <div class="card-top">7<br>♠</div>
-                                <div class="card-center">♠</div>
-                            </div>
-                        </div>
-                        
-                        <div class="pile">
-                            <div class="card card-back"></div>
-                            <div class="card card-face heart">
-                                <div class="card-top">K<br>♥</div>
-                                <div class="card-center">♥</div>
-                            </div>
-                        </div>
-                        
-                        <div class="pile">
-                            <div class="card card-back"></div>
-                            <div class="card card-face diamond">
-                                <div class="card-top">3<br>♦</div>
-                                <div class="card-center">♦</div>
-                            </div>
-                        </div>
-                        
-                        <div class="pile">
-                            <div class="card card-back"></div>
-                            <div class="card card-face club">
-                                <div class="card-top">9<br>♣</div>
-                                <div class="card-center">♣</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="diagram-label">Table Hand - 8 cards total (4 piles of 2)</div>
-                </div>
-            </div>
-            
-            <div class="setup-steps">
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <p><strong>Place the remaining cards face-down in the center.</strong> This is the draw pile. Leave space next to it for the discard pile.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <p><strong>Position the hourglass where all players can see it.</strong> Each player should have their beverage ready within reach.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <p><strong>Determine the dealer.</strong> The player to the left of the dealer will start the game. (See Figure 2 for complete setup)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="diagram-placeholder" id="figure2">
-                <p><strong>Figure 2: Complete Game Setup (Overhead View)</strong></p>
+            <ol class="setup-steps">
+                <li>All players are dealt four cards face down (NO LOOKING)</li>
+                <li>All players are dealt another four face up</li>
+                <li>All players place the face up cards on top of the initial four, creating four piles of two cards each</li>
+                <li>All remaining cards are set aside as the draw pile</li>
+            </ol>
+
+            <!-- Figure 2: Table Setup -->
+            <div class="diagram-placeholder">
+                <p>Figure 2: Overhead View of Game Setup (4 Players)</p>
                 <div class="diagram-content">
                     <div class="table-setup">
-                        <!-- Center game table -->
                         <div class="game-table">
                             <!-- Center items -->
                             <div class="center-items">
@@ -240,12 +239,12 @@
                                     <div class="mini-card"></div>
                                     <div class="mini-card"></div>
                                     <div class="mini-card"></div>
-                                    <span class="label">Draw Pile</span>
-                                </div>
-                                <div class="discard-pile">
-                                    <span class="label">Discard Pile</span>
+                                    <div class="label">Draw Pile</div>
                                 </div>
                                 <div class="hourglass-icon">⏳</div>
+                                <div class="discard-pile">
+                                    <div class="label">Discard</div>
+                                </div>
                             </div>
                             
                             <!-- Clockwise arrow -->
@@ -273,7 +272,7 @@
                             </div>
                             
                             <div class="player player-bottom">
-                                <div class="player-label">Player 4</div>
+                                <div class="player-label">Player 4 <span class="dealer-label">(Dealer)</span></div>
                                 <div class="player-cards">
                                     <div class="tiny-pile"></div>
                                     <div class="tiny-pile"></div>
@@ -283,7 +282,7 @@
                             </div>
                             
                             <div class="player player-left">
-                                <div class="player-label">Player 1<br><span class="dealer-label">(Dealer)</span></div>
+                                <div class="player-label">Player 1</div>
                                 <div class="player-cards">
                                     <div class="tiny-pile"></div>
                                     <div class="tiny-pile"></div>
@@ -293,8 +292,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="diagram-label">Player to left of dealer (Player 2) starts</div>
                 </div>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Important Setup Note</h3>
+                <p>Make sure everyone understands they have TWO separate hands: their table hand (the 8 cards in front of them - 4 piles of 2 cards each) and their held hand (cards drawn during the game or picked up from the discard pile). You cannot play face-down table cards until the draw pile is empty!</p>
             </div>
         </div>
 
@@ -304,25 +307,26 @@
             <div class="page-number">Page 4</div>
             
             <h3 id="rules">Rules</h3>
+            
             <ol class="rules-list">
-                <li><strong>Face-down cards:</strong> The facedown cards MUST stay face down until they are played</li>
-                <li><strong>Two hands:</strong> Players have two hands, the table hand and the held hand
+                <li>The facedown cards MUST stay face down until they are played</li>
+                <li>Players have two hands, the table hand and the held hand
                     <ol type="a">
                         <li>Players are able to play from either hand on their turn</li>
                         <li>Players may also play from a combination of both hands</li>
                         <li>The facedown cards in the table hand may NOT be played until the draw pile is empty</li>
                     </ol>
                 </li>
-                <li><strong>Playing multiples:</strong> If a player has two or more cards that are playable, they may play all of the duplicate cards at the same time
+                <li>If a player has two or more cards that are playable, they may play all of the duplicate cards at the same time
                     <ol type="a">
                         <li>Once a face down card has been played and subsequently revealed, the player may add any duplicate cards they may have</li>
                     </ol>
                 </li>
-                <li><strong>Unable to play:</strong> If a player is unable to play a card, they must add the discard pile to their held hand (separate from their table hand) and take a drink</li>
-                <li><strong>Power of 10:</strong> Playing a 10 removes the entire discard pile from the game</li>
-                <li><strong>Four of a kind:</strong> If all four of the same number card is played, remove the discard pile from the game</li>
-                <li><strong>After pickup or removal:</strong> After the discard pile is added to a hand or removed, the player who removed or picked up the discard pile plays the next starting card</li>
-                <li><strong>Aces:</strong> Aces are low (value of 1)</li>
+                <li>If a player is unable to play a card, they must add the discard pile to their held hand (separate from their table hand) and take a drink</li>
+                <li>Playing a 10 removes the entire discard pile from the game</li>
+                <li>If all four of the same number card is played, remove the discard pile from the game</li>
+                <li>After the discard pile is added to a hand or removed, the player who removed or picked up the discard pile plays the next starting card</li>
+                <li>Aces are low</li>
             </ol>
 
             <div class="divider"></div>
@@ -330,37 +334,14 @@
             <h3 id="playing">Playing the Game</h3>
             <div class="page-number">Page 5</div>
             
-            <h4>Turn Structure</h4>
-            <p>Each turn consists of the following steps:</p>
-            
             <ol class="gameplay-list">
-                <li><strong>Starting the game:</strong> The player to the left of the dealer places a starting card from their table hand onto the discard pile, flips the hourglass, and draws from the draw pile to refill their slot.</li>
-                
-                <li><strong>Playing a card:</strong> Moving clockwise, each player must play a card less than or equal to the card currently on top of the discard pile from their available cards (hand or table).
+                <li>The player to the left of the dealer places a starting card, flips the hourglass, and draws from the draw pile to refill their slot.</li>
+                <li>Moving clockwise, each player plays a card less than or equal to the card currently on top of the discard pile from their available cards (hand or table).
                     <ol type="a">
-                        <li><strong>Valid cards:</strong> You may play from your held hand OR from your face-up table cards</li>
-                        <li><strong>After playing from table hand:</strong> If you played a card(s) from your table hand, draw a card from the draw pile to fill the empty spot</li>
-                        <li><strong>When draw pile is empty:</strong> If the draw pile is gone, leave the face down card uncovered (but still face down)</li>
+                        <li>If you played a card(s) from your table hand, draw a card to fill it. If the draw pile is gone, leave the face down card uncovered.</li>
                     </ol>
                 </li>
-                
-                <li><strong>Special actions available:</strong>
-                    <ul>
-                        <li><strong>Playing multiples:</strong> If you have 2+ cards of the same number, you can play them all at once</li>
-                        <li><strong>Playing a 10:</strong> You can play a 10 on ANY card. This clears the discard pile from the game</li>
-                        <li><strong>Completing four of a kind:</strong> If the 4th card of a number is played, the discard pile is cleared</li>
-                    </ul>
-                </li>
-                
-                <li><strong>Cannot play:</strong> If you have no valid cards to play, you must:
-                    <ol type="a">
-                        <li>Pick up the entire discard pile and add it to your held hand</li>
-                        <li>Take a drink</li>
-                        <li>Play the next starting card</li>
-                    </ol>
-                </li>
-                
-                <li><strong>Continue play:</strong> Play continues clockwise until a player has no cards in either of their hands or the timer runs out</li>
+                <li>Continue clockwise until a player has no cards in either of their hands or the timer runs out</li>
             </ol>
 
             <div class="divider"></div>
@@ -399,43 +380,62 @@
             <h2>Winning, Losing, and End-of-Game Conditions</h2>
             <div class="page-number">Page 7</div>
             
-            <h3>How the Game Ends</h3>
-            <p>The game ends in one of two ways:</p>
-            
-            <div class="win-condition">
-                <h4>Victory Condition: Empty Hands</h4>
-                <p>A player wins if they successfully play all their cards from both of their hands (table hand and held hand). The game ends immediately when this occurs.</p>
-            </div>
-            
-            <div class="win-condition">
-                <h4>Time's Up Condition</h4>
-                <p>All players lose if the timer runs out before anyone can get to zero cards. The game ends immediately when the hourglass runs out.</p>
-            </div>
-            
-            <h3>Determining the Winner</h3>
             <ul>
-                <li><strong>Single winner:</strong> If one player empties both hands before time expires, that player wins</li>
-                <li><strong>No winner:</strong> If time expires, there is no winner - all players lose together</li>
-            </ul>
-            
-            <h3>End-of-Game Penalties</h3>
-            <ul>
+                <li>A player wins if they play all their cards from both of their hands</li>
+                <li>All players lose if the timer runs out before anyone can get to zero cards</li>
                 <li>All losing players must take a drink at the end of the game</li>
-                <li>If time expires, ALL players must take a drink (even if someone was close to winning)</li>
-            </ul>
-            
-            <h3>Tie-Breaking Procedures</h3>
-            <p><strong>Simultaneous Victory:</strong> In the extremely rare case that two players empty their hands on the same turn (for example, if Player A empties their hand, but Player B also had no cards and it's discovered after), the player who physically played their last card first is the winner.</p>
-            
-            <h3>Playing Multiple Rounds</h3>
-            <p>For extended play, you can play multiple rounds and track wins:</p>
-            <ul>
-                <li>First player to win 3 rounds is the ultimate champion</li>
-                <li>Rotate the dealer position clockwise each round</li>
-                <li>Players who won previous rounds may start with a slight disadvantage (optional house rule: winner starts with one extra card)</li>
             </ul>
         </div>
 
+        <!-- Quick Reference Section -->
+        <div id="reference" class="section">
+            <h2>Quick Reference</h2>
+            <div class="page-number">Page 8</div>
+            
+            <h3>Special Cards & Actions</h3>
+            <div class="reference-table">
+                <div class="reference-row">
+                    <div class="reference-label">Playing a 10</div>
+                    <div class="reference-value">Can be played on ANY card. Clears the entire discard pile from the game. You then play the next starting card.</div>
+                </div>
+                <div class="reference-row">
+                    <div class="reference-label">Four of a Kind</div>
+                    <div class="reference-value">When the 4th card of the same rank is played, the discard pile is cleared. The player who completed it plays the next starting card.</div>
+                </div>
+                <div class="reference-row">
+                    <div class="reference-label">Playing Multiples</div>
+                    <div class="reference-value">If you have 2+ cards of the same rank that are all playable, you can play them all at once.</div>
+                </div>
+                <div class="reference-row">
+                    <div class="reference-label">Cannot Play</div>
+                    <div class="reference-value">Pick up entire discard pile + take a drink + play next starting card.</div>
+                </div>
+                <div class="reference-row">
+                    <div class="reference-label">Ace Value</div>
+                    <div class="reference-value">Aces are LOW (value of 1). Can be played on any card.</div>
+                </div>
+            </div>
+
+            <h3>Strategy Tips</h3>
+            <div class="tips-section">
+                <ul>
+                    <li><strong>Manage your table hand carefully:</strong> Remember you can't play face-down cards until the draw pile is empty!</li>
+                    <li><strong>Save your 10s:</strong> They're powerful get-out-of-jail-free cards. Use them when you're really stuck.</li>
+                    <li><strong>Watch for four-of-a-kind opportunities:</strong> If three of a rank have been played, consider if you have or can get the fourth.</li>
+                    <li><strong>Keep track of time:</strong> Don't get too caught up strategizing. Speed matters!</li>
+                    <li><strong>Balance risk vs. reward:</strong> Sometimes taking the pile early (with fewer cards) is better than waiting until it's huge.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p class="emphasis">Now shuffle up and deal!</p>
+                <p class="small-print">Remember to consume your weight in alcohol and always drink and drive.</p>
+                <p class="copyright">© 2024 Vendetti. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
